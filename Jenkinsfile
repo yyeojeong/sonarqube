@@ -1,12 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS' // Make sure to have NodeJS installed in Jenkins
-    }
-
     environment {
         SONAR_PROJECT_KEY = 'badsaarow_sonarqube'
+        PATH = "${tool 'NodeJS'}/bin:${env.PATH}"
     }
 
     stages {

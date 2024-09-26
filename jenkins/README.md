@@ -63,6 +63,10 @@ squ_fad8be2b23cf1abd3e8b5b23603c80b08728b94a
 ![build now](image-26.png)
 ![first build](image-27.png)
 
+## nodejs plugin
+
+![nodejs plugin](image-33.png)
+
 ## github
 
 ![developer setting](image-28.png)
@@ -72,3 +76,10 @@ ab528ba2435fa0e6e5ef8a966b3aa0bd07199f65
 
 ![github app secret](image-30.png)
 ![callback URL](image-31.png)
+
+
+## Troubleshooting
+
+![
+  
+](image-32.png)
