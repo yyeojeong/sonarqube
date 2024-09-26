@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    tools {
+        // Define the SonarQube Scanner tool
+        // 'SonarScanner' should match the name you gave in Global Tool Configuration
+        sonarqube 'SonarScanner'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out your source code from version control
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Your build steps go here
+                sh 'echo "Building the project"'
+                // For example: sh 'mvn clean package'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                // Perform SonarQube analysis
+                withSonarQubeEnv('SonarQubeServer') {
+                    sh """
+                        ${tool('SonarScanner')}/bin/sonar-scanner \
+                        -Dsonar.projectKey=your_project_key \
+                        -Dsonar.sources=. \
+                        -Dsonar.java.binaries=target/classes \
+                        -Dsonar.host.url=${SONAR_HOST_URL} \
+                        -Dsonar.login=${SONAR_AUTH_TOKEN}
+                    """
+                }
+            }
+        }
+
+        stage('Quality Gate') {
+            steps {
+                // Wait for the SonarQube Quality Gate to complete
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up workspace
+            cleanWs()
+        }
+    }
+}
