@@ -55,3 +55,20 @@ squ_fad8be2b23cf1abd3e8b5b23603c80b08728b94a
 ![helloworld](image-10.png)
 ![configure](image-11.png)
 ![project main](image-12.png)
+
+## jenkins sonarqube
+
+![create job](image-24.png)
+![pipeline job](image-25.png)
+![build now](image-26.png)
+![first build](image-27.png)
+
+## github
+
+![developer setting](image-28.png)
+![new github app](image-29.png)
+
+ab528ba2435fa0e6e5ef8a966b3aa0bd07199f65
+
+![github app secret](image-30.png)
+![callback URL](image-31.png)
