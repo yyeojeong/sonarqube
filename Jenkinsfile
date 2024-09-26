@@ -1,9 +1,14 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS'
+        sonarqubeScanner 'SonarScanner'
+    }
+
     environment {
         SONAR_PROJECT_KEY = 'badsaarow_sonarqube'
-        PATH = "${tool 'NodeJS'}/bin:${env.PATH}"
+        PATH = "${tool 'NodeJS'}/bin:${tool 'SonarScanner'}/bin:${env.PATH}"
     }
 
     stages {
