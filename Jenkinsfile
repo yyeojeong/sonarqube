@@ -35,7 +35,7 @@ pipeline {
                     sh """
                         sonar-scanner \
                         -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-                        -Dsonar.sources=. \
+                        -Dsonar.sources=./nodejs \
                         -Dsonar.host.url=https://sonarqube.momoiot.co.kr \
                         -Dsonar.exclusions=node_modules/**,test/**
                     """
