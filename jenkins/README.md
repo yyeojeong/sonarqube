@@ -78,9 +78,12 @@ ab528ba2435fa0e6e5ef8a966b3aa0bd07199f65
 ![github app secret](image-30.png)
 ![callback URL](image-31.png)
 
-
 ## Troubleshooting
 
-![
-  
-](image-32.png)
+![alt](image-32.png)
+
+- jekins wait for sonarqube to be up and running
+
+![webhook in sonarqube](image-35.png)
+![set webhook](image-37.png)
+![success jenkins](image-38.png)
