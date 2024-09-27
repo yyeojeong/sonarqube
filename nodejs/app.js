@@ -7,6 +7,8 @@ app.get('/', (req, res) => {
   let b = 2;
   let c = 1 + 2;
   console.log('1+2='+c);
+
+  hello1('hello', 'world');
   res.send('Hello World!');
 });
 
@@ -14,7 +16,12 @@ let server;
 
 const hello1 = (a, b) => {
   console.log('hello1', a, b);
-  return a + ':' + b;
+  return a + b;
+}
+
+const hello2 = (a, b) => {
+  console.log('hello2', a, b);
+  return a + b;
 }
 
 function startServer() {
