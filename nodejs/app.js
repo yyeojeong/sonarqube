@@ -6,6 +6,9 @@ app.get('/', (req, res) => {
   let a = 1;
   let b = 2;
   let c = 1 + 2;
+  if ( a == b ) {
+    console.log('a equals b')
+  }
   console.log('1+2='+c);
 
   hello1('hello', 'world');
