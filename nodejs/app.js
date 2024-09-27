@@ -12,6 +12,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+// Unused variable
+let unusedVariable = 42; // This variable is never used
+
 let server;
 
 const hello1 = (a, b) => {
@@ -19,9 +22,19 @@ const hello1 = (a, b) => {
   return a + b;
 }
 
+// Unused function
+const hello3 = (x) => {
+  return x * 2; // This function is never called
+}
+
 const hello2 = (a, b) => {
   console.log('hello2', a, b);
   return a + b;
+}
+
+// Potential bug: using a magic number
+function calculateArea(radius) {
+  return Math.PI * radius * radius; // Magic number PI
 }
 
 function startServer() {
