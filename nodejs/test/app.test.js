@@ -20,7 +20,10 @@ describe('GET /', () => {
 
 
 describe('GET /hello', () => {
-  it('responds with Hello World!', async () => {
-    assert(true);
+  it('responds with Hello World!22', async () => {
+    const response = await request(app).get('/');
+    expect(response.statusCode).toBe(200);
+    expect(response.text).toBe('Hello World!22');
+    
   });
 });
