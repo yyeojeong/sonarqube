@@ -11,7 +11,18 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/yyeojeong/sonarqube.git']]])
+            }
+        }
 
+
+        stage('Run tests') {
+            steps {
+                sh 'cd nodejs && npm test'
+            }
+        }
 
         stage('SonarQube Analysis') {
             steps {
