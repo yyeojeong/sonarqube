@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
   console.log('1+2='+c);
 
   hello1('hello', 'world');
+  hello2('my', 'world');
+  calculateArea(30);
   res.send('Hello World!');
 });
 
